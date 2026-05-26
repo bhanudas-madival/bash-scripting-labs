@@ -68,3 +68,59 @@ echo $?
 ## Important Learning
 - Linux commands communicate success/failure using exit codes
 - Scripts use exit codes for automation decisions and error handling
+
+# Bash Scripting Labs
+
+Practice repository for learning Bash scripting, Linux automation basics, and DevOps-oriented shell scripting.
+
+---
+
+## Topics Practiced
+
+- Bash scripting basics
+- Variables
+- User input using `read`
+- Command substitution
+- Exit status
+- File and directory checks
+- `if else` conditions
+
+---
+
+## Commands Learned
+
+```bash
+echo
+read
+hostname
+whoami
+pwd
+mkdir
+chmod
+cat
+vim
+```
+
+---
+
+## Scripts Created
+
+```bash
+basic_script.sh
+user_input.sh
+command_output_into_variable.sh
+exit_status.sh
+file_check.sh
+dir_check.sh
+if_with_exit_status.sh
+```
+
+---
+
+## Important Learnings
+
+- `0 = success`
+- non-zero = failure
+- shell spacing matters
+- difference between Linux and Git Bash environment
+- executable permissions using `chmod +x`
