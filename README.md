@@ -124,3 +124,42 @@ if_with_exit_status.sh
 - shell spacing matters
 - difference between Linux and Git Bash environment
 - executable permissions using `chmod +x`
+
+## Bash Scripting Practice
+
+### Environment Setup
+- Moved Bash scripting workflow into WSL Ubuntu
+- Cloned GitHub repositories directly inside WSL projects directory
+- Practiced Git tracking workflow for newly created scripts
+
+### File Permissions
+- Practiced checking file readability using `-r`
+- Learned difference between:
+  - read permission
+  - execute permission
+- Practiced making scripts executable using:
+  - `chmod +x`
+
+### String Validation
+- Built string empty validation script using:
+  - `-z`
+- Practiced validating user input in Bash scripts
+
+### Service & Process Checks
+- Created simple service/process status checking scripts
+
+### Troubleshooting & Debugging
+- Practiced debugging common Bash issues:
+  - `Permission denied`
+  - missing `chmod` operand
+  - file not found errors
+- Practiced correcting filename mistakes and renaming files using:
+  - `mv`
+
+### Linux Commands Practice
+- Practiced:
+  - `df -h /`
+  - `du -sh /`
+- Learned practical difference between:
+  - filesystem usage
+  - directory/file usage
