@@ -163,3 +163,90 @@ if_with_exit_status.sh
 - Learned practical difference between:
   - filesystem usage
   - directory/file usage
+
+````markdown
+## Bash Scripting Labs
+
+### File Existence Check
+- Used `if` condition with `-f`
+- Checked whether file exists
+- Learned exit status basics
+
+```bash
+if [ -f filename ]
+then
+    echo "file exists"
+fi
+````
+
+---
+
+### Service Check Script
+
+* Used `systemctl is-active`
+* Stored exit code using `$?`
+* Practiced service monitoring script
+* Learned difference between `sh script.sh` and `./script.sh`
+
+```bash
+#!/bin/bash
+
+systemctl is-active nginx > /dev/null 2>&1
+
+if [ $? -eq 0 ]
+then
+    echo "nginx is running"
+else
+    echo "nginx is stopped"
+fi
+```
+
+---
+
+### Disk Usage Alert Script
+
+* Used `df` to check filesystem usage
+* Parsed command output using `awk`
+* Removed `%` using `tr -d`
+* Used numeric comparison with `-gt`
+* Tested WSL mount points (`/`, `/mnt/d`)
+* Understood why `/` and Windows drives show different usage
+
+```bash
+#!/bin/bash
+
+usage=$(df /mnt/d | awk 'NR==2 {print $5}' | tr -d '%')
+
+if [ $usage -gt 80 ]
+then
+    echo "WARNING: Disk usage is above 80%"
+else
+    echo "Disk usage is normal"
+fi
+```
+
+---
+
+### Commands Practiced
+
+```bash
+df
+du
+awk
+tr
+systemctl
+git status
+git add
+chmod +x
+```
+
+---
+
+### WSL / Terminal Learning
+
+* Investigated terminal exit error `0xffffffff`
+* Learned WSL restart behavior
+* Enabled tmux mouse support
+
+```bash
+echo "set -g mouse on" >> ~/.tmux.conf
