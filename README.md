@@ -250,3 +250,62 @@ chmod +x
 
 ```bash
 echo "set -g mouse on" >> ~/.tmux.conf
+
+## 2026-05-29
+
+### Topics Practiced
+
+* Service monitoring using `systemctl`
+* Understanding Linux exit codes (`$?`)
+* Bash conditional statements (`if/else`)
+* Output redirection (`> /dev/null`)
+* Disk usage monitoring with `df`
+* Text processing using `awk` and `tr`
+* Bash script debugging and troubleshooting
+
+### Scripts Created
+
+#### Service Check Script
+
+* Checked whether a service is running using `systemctl is-active`
+* Used exit codes to determine service status
+* Displayed appropriate messages for running and stopped services
+
+#### SSH Service Check Script
+
+* Verified SSH service status
+* Practiced conditional logic based on command exit status
+
+#### Disk Usage Alert Script
+
+* Retrieved disk usage percentage from `/mnt/c`
+* Extracted and cleaned percentage values using `awk` and `tr`
+* Generated alerts when disk usage exceeded 80%
+
+### Key Commands Used
+
+```bash
+systemctl list-units --type=service
+systemctl is-active cron
+systemctl is-active ssh
+echo $?
+
+df -h
+df -h /mnt/c
+
+awk 'NR==2 {print $5}'
+tr -d '%'
+
+chmod +x filename.sh
+```
+
+### Lessons Learned
+
+* Exit code `0` indicates success.
+* `> /dev/null` suppresses command output while preserving exit status.
+* Variables must be referenced as `$variable` or `${variable}`.
+* Numeric comparisons require operators such as `-gt`.
+* Bash condition syntax requires spaces around brackets:
+  `[ "$usage" -gt 80 ]`
+* Read error messages carefully when debugging Bash scripts.
+
