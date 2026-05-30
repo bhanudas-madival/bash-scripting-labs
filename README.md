@@ -309,3 +309,93 @@ chmod +x filename.sh
   `[ "$usage" -gt 80 ]`
 * Read error messages carefully when debugging Bash scripts.
 
+Bash Scripting Practice
+Disk Usage Alert Script
+Used df -h to check filesystem usage.
+
+Extracted disk usage percentage using:
+
+df -h /mnt/d | awk 'NR==2 {print $5}' | tr -d '%'
+Implemented threshold-based disk alert.
+Practiced numeric comparison operators:
+-eq
+-ne
+-gt
+-ge
+-lt
+-le
+For Loops
+
+Created loop to iterate through multiple users.
+
+for user in ram shyam hari bhanu
+do
+    echo "Creating user $user"
+done
+Learned loop variables and variable expansion.
+While Loops & Monitoring
+
+Created continuous monitoring scripts using:
+
+while true
+do
+    ...
+    sleep 2
+done
+Learned why sleep is important to prevent busy loops and high CPU usage.
+Practiced stopping processes with Ctrl+C (SIGINT).
+Service Monitoring
+
+Monitored service status using:
+
+systemctl is-active nginx
+Disk Monitoring
+
+Monitored filesystem usage using:
+
+df -h /
+
+Filtered output using:
+
+df -h / | awk 'NR==2'
+Functions
+
+Created reusable Bash functions.
+
+check_disk() {
+    df -h
+}
+
+check_disk
+Learned difference between function definition and function invocation.
+Shell Concepts
+
+Learned difference between:
+
+sh script.sh
+
+and
+
+source script.sh
+
+Verified using:
+
+echo $$
+Understood parent shell vs child shell behavior.
+Networking Commands
+
+Practiced:
+
+ping -c 2 google.com
+nc -zv google.com 443
+Learned:
+Ctrl+C → SIGINT (2)
+Ctrl+Z → SIGTSTP (20)
+Service Verification
+
+Used:
+
+command -v ssh
+Learned difference between:
+openssh-client
+openssh-server
