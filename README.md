@@ -399,3 +399,145 @@ command -v ssh
 Learned difference between:
 openssh-client
 openssh-server
+
+# Bash Scripting Labs — Lab 5 & Lab 6
+
+## Lab 5 — File Processing
+
+### grep
+
+* Search text patterns in log files.
+* Case-insensitive search:
+
+```bash
+grep -i "failed" /var/log/auth.log
+```
+
+### wc
+
+* Count matching lines:
+
+```bash
+grep -i "failed" /var/log/auth.log | wc -l
+```
+
+### awk
+
+* Extract specific fields from text.
+
+```bash
+awk '{print $6}' sample.log
+```
+
+* Extracted IP addresses from failed login entries.
+
+### sort and uniq
+
+* Sort data before removing duplicates.
+
+```bash
+sort ips.txt | uniq
+sort ips.txt | uniq -c
+```
+
+* `uniq` only removes adjacent duplicates.
+
+### Pipeline Example
+
+```bash
+grep failed auth.log | awk '{print $6}' | sort | uniq -c
+```
+
+### Script Created
+
+* `failed-login-report.sh`
+
+---
+
+## Lab 6 — Arguments & Positional Parameters
+
+### Positional Parameters
+
+```bash
+$1   # first argument
+$2   # second argument
+$#   # argument count
+$@   # all arguments
+```
+
+### Argument Validation
+
+```bash
+if [ -z "$1" ]
+then
+    echo "Usage: ./script.sh <arg>"
+    exit 1
+fi
+```
+
+### Backup Script
+
+```bash
+tar -czf backup.tar.gz "$1"
+```
+
+* Learned permission-related backup failures when backing up `/etc` without sudo.
+
+### Arithmetic Expansion
+
+```bash
+echo $(( 10 + 5 ))
+```
+
+### Calculator Script
+
+* Used `if / elif / else`
+* Supported `+`, `-`, `*`, `/`
+
+### Globbing Lesson
+
+```bash
+./calc.sh 5 * 5
+```
+
+* `*` expands to matching filenames.
+* Correct:
+
+```bash
+./calc.sh 5 "*" 5
+```
+
+### Debugging
+
+```bash
+bash -x calc.sh
+```
+
+* Traces command execution.
+
+### Loops with Arguments
+
+```bash
+for arg in "$@"
+do
+    echo "$arg"
+done
+```
+
+### Output Redirection
+
+```bash
+> /dev/null 2>&1
+```
+
+* Suppress stdout and stderr.
+
+### Scripts Created
+
+* argument1.sh
+* count-args.sh
+* all-args.sh
+* backup.sh
+* calc.sh
+* show-all-args.sh
+* ping-servers.sh

@@ -1,0 +1,6 @@
+PING yahoo.com (74.6.143.26) 56(84) bytes of data.
+64 bytes from media-router-fp74.prod.media.vip.bf1.yahoo.com (64 bytes from 20.207.73.82: icmp_seq=2 ttl=164 bytes from media-router-fp74.prod.media.vip.bf1.yahoo.com (74.6.143.26): icmp_seq=2 ttl=44 time=240 ms
+
+--- yahoo.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 999ms
+rtt min/avg/max/mdev = 238.591/239.343/240.095/0.752 ms
