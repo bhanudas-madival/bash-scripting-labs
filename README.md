@@ -541,3 +541,64 @@ done
 * calc.sh
 * show-all-args.sh
 * ping-servers.sh
+
+## Bash Scripting Lab 7 - Operational Automation
+
+### System Health Monitoring Script
+
+Created `system-health.sh` to collect basic system health information.
+
+Commands used:
+
+- `hostname` → display system hostname
+- `uptime` → display system uptime and load averages
+- `free -h` → display memory usage in human-readable format
+- `df -h` → display disk usage in human-readable format
+- `who` → display logged-in users
+- `systemctl --failed` → display failed services
+
+### Command Substitution
+
+Command substitution executes a command and inserts its output.
+
+Syntax:
+
+$(command)
+
+Example:
+
+echo "Generated At: $(date)"
+
+Use cases:
+- timestamps in reports
+- storing command output in variables
+- dynamic script output
+
+### Disk Usage Monitoring
+
+Identified high disk utilization using:
+
+df -h
+
+Observed:
+- C: drive → 84% usage
+- D: drive → 92% usage
+
+Filter high-usage filesystems:
+
+df -h | grep -E '8[0-9]%|9[0-9]%|100%'
+
+Regex breakdown:
+- `-E` → extended regular expressions
+- `8[0-9]%` → matches 80–89%
+- `9[0-9]%` → matches 90–99%
+- `100%` → matches full disks
+- `|` → OR operator
+
+### Bash Concepts Learned
+
+- Command substitution: `$(command)`
+- Monitoring script structure using multiple system commands
+- Using pipes (`|`) to filter command output
+- Using regular expressions with `grep -E`
+- Basic operational health reporting automation
