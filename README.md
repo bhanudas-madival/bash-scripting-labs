@@ -602,3 +602,12 @@ Regex breakdown:
 - Using pipes (`|`) to filter command output
 - Using regular expressions with `grep -E`
 - Basic operational health reporting automation
+
+Add improved system health report script
+
+- Added timestamped health report generation
+- Added hostname validation using exit status checks
+- Added memory, uptime, disk, and user monitoring
+- Added disk usage threshold detection (80%+)
+- Added failed service counting with systemctl and wc
+- Practiced output redirection and error suppression
