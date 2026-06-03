@@ -611,3 +611,25 @@ Add improved system health report script
 - Added disk usage threshold detection (80%+)
 - Added failed service counting with systemctl and wc
 - Practiced output redirection and error suppression
+
+### Lab 9 - Cron Automation & Backup Operations
+
+**Learned:**
+
+* Cron job scheduling using `crontab -e`
+* Difference between `>` (overwrite) and `>>` (append)
+* Creating compressed backups using `tar -czf`
+* Verifying archives using `tar -tzf`
+* Restoring backups using `tar -xzf`
+* Difference between backing up directory contents (`.`) and the directory itself (`backup-lab/`)
+* Hidden files (`.` prefix) and Linux path concepts (`.` and `..`)
+
+**Scripts Created:**
+
+* `backup.sh`
+
+  * Accepts directory as an argument
+  * Creates compressed backup archive
+  * Checks exit status using `$?`
+  * Verifies backup contents after creation
+

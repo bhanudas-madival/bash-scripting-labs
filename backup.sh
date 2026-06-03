@@ -1,10 +1,15 @@
-#!/bin/bash 
+#!/bin/bash
 
-if [ -z "$1" ] 
+tar -czf backup.tar.gz "$1"
+
+status=$?
+
+if [ $status -eq 0 ]
 then 
-	echo "Usage: ./backup.sh <directory>"
-	exit 1
+	echo "Backup Successful"
+	tar -tzf backup.tar.gz
+
+elif [ -z "$1" ]
+then 
+	echo "Backup not Successful -> Enter valid directory"
 fi
-
-
-tar -czf backup.tar.gz "$1" 
