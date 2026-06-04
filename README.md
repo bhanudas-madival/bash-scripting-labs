@@ -633,3 +633,63 @@ Add improved system health report script
   * Checks exit status using `$?`
   * Verifies backup contents after creation
 
+### Cron Automation (Lab 9)
+
+- Learned Linux cron scheduling for task automation.
+- Used `crontab -e` to create cron jobs.
+- Used `crontab -l` to verify scheduled jobs.
+- Understood cron format:
+
+  * * * * *
+  │ │ │ │ │
+  │ │ │ │ └── Day of Week
+  │ │ │ └──── Month
+  │ │ └────── Day of Month
+  │ └──────── Hour
+  └────────── Minute
+
+- Practiced common schedules:
+  - `* * * * *` → every minute
+  - `*/5 * * * *` → every 5 minutes
+  - `0 * * * *` → every hour
+  - `0 0 * * *` → every day at midnight
+  - `0 9 * * *` → every day at 9 AM
+
+- Learned advanced cron syntax:
+  - `,` → list of values
+  - `-` → range of values
+  - `*/n` → every n units
+
+- Created `backup.sh` and scheduled it using cron.
+- Verified cron execution using:
+
+  date >> /tmp/cron-test.log
+
+- Used `watch` to observe automatic file updates.
+- Learned cron troubleshooting:
+  - Cron uses a minimal environment.
+  - Relative paths may fail in cron jobs.
+  - Prefer absolute paths for commands and files.
+  - Use `which <command>` to find executable paths.
+
+### Linux Notes
+
+- `/tmp` is used for temporary files and logs.
+- `which <command>` shows the full path of an executable.
+- `>` overwrites a file.
+- `>>` appends to a file.
+- Cron is commonly used for:
+  - backups
+  - monitoring
+  - cleanup jobs
+  - report generation
+  - health checks
+
+### Commands Practiced
+
+crontab -e
+crontab -l
+chmod +x backup.sh
+which tar
+watch ls -l backup.tar.gz
+tar -czf backup.tar.gz bash-lab/
