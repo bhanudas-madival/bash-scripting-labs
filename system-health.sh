@@ -1,30 +1,19 @@
-#!/bin/bash
+#!/bin/bash 
+
+echo >> /home/bhanu/projects/bash-scripting-labs/temp/health.log
+echo "=====$(date)=====" | tee >> /home/bhanu/projects/bash-scripting-labs/temp/health.log 
+
+echo >> /home/bhanu/projects/bash-scripting-labs/temp/health.log
+echo "System Uptime" | tee >> /home/bhanu/projects/bash-scripting-labs/temp/health.log
+uptime | tee >> /home/bhanu/projects/bash-scripting-labs/temp/health.log
 
 
-echo "========= SYSTEM HEALTH REPORT ========="
-echo "Generated At: $(date)"
+echo >> /home/bhanu/projects/bash-scripting-labs/temp/health.log
+echo "RAM & SWAP Usage" | tee >> /home/bhanu/projects/bash-scripting-labs/temp/health.log
+free -h |tee >> /home/bhanu/projects/bash-scripting-labs/temp/health.log
 
 
-echo 
-echo "Hostname:"
-hostname
+echo >> /home/bhanu/projects/bash-scripting-labs/temp/health.log
+echo "Disk Usages of root Directory" | tee >> /home/bhanu/projects/bash-scripting-labs/temp/health.log 
+df -h / | tee >> /home/bhanu/projects/bash-scripting-labs/temp/health.log 
 
-echo 
-echo "Uptime"
-uptime
-
-echo
-echo "Memory Usage:"
-free -h 
-
-echo 
-echo "Disk Usage:"
-df -h 
-
-echo 
-echo "Logged In Users:" 
-who 
-
-echo 
-echo "Failed Servces:"
-systemctl --failed 

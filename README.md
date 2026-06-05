@@ -693,3 +693,55 @@ chmod +x backup.sh
 which tar
 watch ls -l backup.tar.gz
 tar -czf backup.tar.gz bash-lab/
+
+05 June 2026 (Fri) Bash Scripting
+
+## Cron Automation & Monitoring
+
+### Disk Monitoring Script
+- Created disk-monitor.sh
+- Logged timestamps using command substitution: $(date)
+- Logged root filesystem usage using:
+  df -h /
+- Used >> to append output to log files
+- Learned that >> creates a file if it does not exist
+
+### Cron Jobs
+- Configured cron jobs using crontab -e
+- Tested schedules:
+  * * * * *     (every minute)
+  */2 * * * *  (every 2 minutes)
+  */5 * * * *  (every 5 minutes)
+- Verified cron execution using:
+  journalctl -u cron -n 20
+
+### Cron Troubleshooting
+- Diagnosed log file not updating
+- Learned cron uses a different working directory than interactive shells
+- Found duplicate log files using:
+  find /home/bhanu -name "disk.log"
+- Fixed issue by replacing relative paths with absolute paths
+
+### System Health Monitoring
+- Created system-health.sh
+- Logged:
+  uptime
+  free -h
+  df -h /
+- Practiced appending monitoring output to health.log
+
+### Bash Concepts Reviewed
+- $# = number of arguments
+- $0 = script name
+- $1, $2 = positional arguments
+- "$@" preserves arguments correctly
+- exit 1 terminates script with error status
+- $(command) performs command substitution
+
+### Useful Commands
+- journalctl -u cron -n 20
+- crontab -l
+- crontab -e
+- find /home/bhanu -name "disk.log"
+- tail -f logfile
+- watch cat logfile
