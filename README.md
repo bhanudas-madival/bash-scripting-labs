@@ -745,3 +745,78 @@ tar -czf backup.tar.gz bash-lab/
 - find /home/bhanu -name "disk.log"
 - tail -f logfile
 - watch cat logfile
+
+## Bash Lab 8 - Error Handling & Debugging
+
+### Shebang
+```bash
+#!/bin/bash
+```
+
+- Specifies Bash as the script interpreter.
+
+### Debugging Scripts
+
+Run a script in debug mode:
+
+```bash
+bash -x script.sh
+```
+
+- `-x` = display commands as they execute.
+- Useful for locating failures and understanding execution flow.
+
+### Strict Error Handling
+
+```bash
+set -e
+```
+
+- Exit the script immediately when a command returns a non-zero status.
+- Prevents scripts from continuing after failures.
+
+### Argument Validation
+
+```bash
+if [ $# -eq 0 ]
+then
+    echo "Usage: $0 <directory>"
+    exit 1
+fi
+```
+
+- `$#` = number of command-line arguments.
+- `-eq` = numeric equality comparison.
+- Displays usage information when arguments are missing.
+
+### Directory Validation
+
+```bash
+dir="$1"
+
+if [ -d "$dir" ]
+then
+    tar -czf backup.tar.gz "$dir"
+fi
+```
+
+- `$1` = first command-line argument.
+- `-d` = checks whether a path exists and is a directory.
+
+### Creating Compressed Backups
+
+```bash
+tar -czf backup.tar.gz "$dir"
+```
+
+- `-c` = create archive
+- `-z` = gzip compression
+- `-f` = archive filename follows
+
+### Troubleshooting Learned
+
+- Read actual error messages before applying fixes.
+- `./chmod` fails because `./` attempts to execute a file named `chmod` from the current directory.
+- Use `chmod` directly to run the system command.
+- Backing up `/etc` may fail due to permission-denied files.
+- `set -e` stops the script immediately when a command fails.
