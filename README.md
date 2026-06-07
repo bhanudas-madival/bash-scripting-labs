@@ -820,3 +820,27 @@ tar -czf backup.tar.gz "$dir"
 - Use `chmod` directly to run the system command.
 - Backing up `/etc` may fail due to permission-denied files.
 - `set -e` stops the script immediately when a command fails.
+
+- Built a Server Health Dashboard Bash script.
+- Used output redirection:
+  - > to overwrite/create report file
+  - >> to append command output
+- Generated automated system reports containing:
+  - hostname
+  - uptime
+  - memory usage (free -h)
+  - CPU statistics (top -bn1 | head -20)
+  - disk usage (df -h)
+  - top CPU-consuming processes (ps aux --sort=-%cpu | head)
+  - failed services (systemctl --failed --type=service)
+  - listening network ports (ss -tulnp)
+- Learned the difference between:
+  - df (filesystem usage)
+  - du (file/directory usage)
+- Learned why top must be used in batch mode (top -bn1) inside scripts.
+- Practiced troubleshooting Bash script issues:
+  - overwrite vs append redirection
+  - invalid redirection syntax
+  - duplicate report content
+  - command selection for monitoring reports
+- Successfully generated and validated server-report.txt.
