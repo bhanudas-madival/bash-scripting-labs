@@ -844,3 +844,50 @@ tar -czf backup.tar.gz "$dir"
   - duplicate report content
   - command selection for monitoring reports
 - Successfully generated and validated server-report.txt.
+
+## Bash Scripting - Lab 10 Project 1
+
+### Server Health Report Script
+
+Created a modular server health reporting script using Bash functions.
+
+Features:
+
+* Generate server health report
+* Collect hostname information
+* Collect uptime information
+* Collect memory usage (`free -h`)
+* Collect CPU information (`top -bn1`)
+* Collect disk usage (`df -h`)
+* Collect top CPU-consuming processes (`ps aux --sort=-%cpu`)
+* Collect failed services (`systemctl --failed --type=service`)
+* Collect listening network ports (`ss -tulnp`)
+* Save report to `server-report.txt`
+
+### Bash Concepts Practiced
+
+* Functions
+* Function calls
+* `main()` pattern
+* Variables
+* Command substitution (`$(date)`)
+* Output redirection (`>` and `>>`)
+* Pipes (`|`)
+* Script organization
+* Linux monitoring commands
+
+### Commands Reference
+
+* `free -h` → Memory usage
+* `df -h` → Disk usage
+* `top -bn1` → CPU/process snapshot
+* `ps aux --sort=-%cpu` → Top CPU consumers
+* `systemctl --failed --type=service` → Failed services
+* `ss -tulnp` → Listening network ports
+
+### Notes
+
+* Functions can be loaded into the current shell using `source script.sh`
+* Functions are called using only their name
+* `main()` provides a clear entry point for script execution
+* `>` overwrites a file, `>>` appends to a file
