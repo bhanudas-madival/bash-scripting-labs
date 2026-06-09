@@ -891,3 +891,58 @@ Features:
 * Functions are called using only their name
 * `main()` provides a clear entry point for script execution
 * `>` overwrites a file, `>>` appends to a file
+
+09 June 2026 (Tue) Bash Scripting
+
+## Deployment Script Project
+
+* Used `git pull` to update local repository from GitHub.
+* Used `systemctl restart nginx` to restart a service.
+* Used `systemctl is-active nginx` to verify service status.
+* Used `curl http://localhost` to verify application availability.
+* Learned when `set -e` is useful and when manual error handling is preferred.
+* Practiced checking command exit status using `$?`.
+* Used output redirection:
+
+  * `> /dev/null`
+  * `2>&1`
+
+## Log Monitoring Project
+
+* Generated log reports from:
+
+  * `/var/log/syslog`
+  * `/var/log/auth.log`
+* Used:
+
+  * `grep -i`
+  * `grep -c`
+  * `tail`
+* Counted log errors using:
+
+  * `grep -ic "error" /var/log/syslog`
+* Checked for failed login attempts in `auth.log`.
+* Practiced Bash debugging using:
+
+  * `bash -n script.sh`
+  * `bash -x script.sh`
+* Fixed common Bash errors:
+
+  * Missing `}`
+  * Missing `fi`
+  * Variable name mismatch
+  * Incorrect output redirection
+
+## Log Analysis Project
+
+* Used `awk '{print $NF}'` to extract the last field from log entries.
+* Learned:
+
+  * `$NF` = last field in awk.
+* Used:
+
+  * `sort`
+  * `uniq -c`
+* Generated IP address frequency reports.
+* Counted ERROR and WARNING entries from log files.
+* Created structured report files using Bash functions and redirection.
