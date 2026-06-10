@@ -946,3 +946,88 @@ Features:
 * Generated IP address frequency reports.
 * Counted ERROR and WARNING entries from log files.
 * Created structured report files using Bash functions and redirection.
+
+10 June 2026 (Wed) Bash Scripting
+
+## Bash Notes
+
+### stdin Input Redirection
+
+```bash
+command < file
+```
+
+* Redirects file contents to command stdin.
+* Command reads data as if it were typed from keyboard.
+
+Examples:
+
+```bash
+wc -l < servers.txt
+sort < servers.txt
+```
+
+### read Command
+
+```bash
+read variable
+```
+
+* Reads one line from stdin.
+* Stores input in variable.
+
+Examples:
+
+```bash
+read username
+read name surname
+read -p "Enter username: " username
+```
+
+### while read Pattern
+
+```bash
+while read server
+do
+    echo "$server"
+done < servers.txt
+```
+
+* Reads file line-by-line.
+* Each iteration stores one line in `server`.
+
+### Multi-Server Connectivity Checker
+
+Concepts used:
+
+```bash
+while read
+if / then / else
+ping -c 1
+exit status
+stdin redirection
+>> append redirection
+```
+
+Example:
+
+```bash
+if ping -c 1 -W 1 "$server" > /dev/null 2>&1
+then
+    echo "[OK] $server" >> reachable.txt
+else
+    echo "[FAIL] $server" >> unreachable.txt
+fi
+```
+
+### Bash Concepts Reinforced
+
+* stdin vs filename arguments
+* `<` input redirection
+* `>` overwrite file
+* `>>` append to file
+* `/dev/null`
+* `2>&1`
+* command exit codes
+* debugging Bash scripts
+
