@@ -1031,3 +1031,87 @@ fi
 * command exit codes
 * debugging Bash scripts
 
+# 21 Jun 2026 (Sun) Bash Scripting
+
+## Case Statement Practice
+
+### Service Action Menu
+- Created a script that accepts user input (`status` / `restart`) and uses a `case` statement to manage a service.
+
+### File Type Checker
+- Created a script to identify file types using wildcard patterns:
+  - `*.txt`
+  - `*.sh`
+  - `*.log`
+
+### Day of Week Script
+- Created a script that maps numbers (1-7) to weekdays using a `case` statement.
+
+### Admin Script Menu
+- Created a menu-driven administration script using:
+  - Backup
+  - Restore
+  - Status
+  - Exit
+- Used `while` loop with `case` statement.
+
+## Functions and Arguments
+
+### Connectivity Checker
+- Created a script that accepts multiple servers as arguments.
+- Used:
+  - Functions
+  - `$@`
+  - `for` loop
+  - `ping`
+  - Exit status checking
+
+Example:
+
+```bash
+connectivity_check "$@"
+```
+
+## Bash Concepts Learned
+
+### xargs
+- Learned how `xargs` converts stdin into command-line arguments.
+- Practiced administration examples with:
+  - `find`
+  - `pgrep`
+  - `ping`
+  - `systemctl`
+
+### Date Formatting
+- Learned:
+
+```bash
+date +%F
+```
+
+- `%F` = `YYYY-MM-DD`
+
+Example:
+
+```bash
+FILE="backup-$(date +%F).tar.gz"
+```
+
+### Shell Globbing
+- Learned how wildcard expansion occurs before a script receives arguments.
+
+Example:
+
+```bash
+./calc.sh 5 * 5
+```
+
+- Fixed using:
+
+```bash
+./calc.sh 5 "*" 5
+```
+
+### Shell vs Environment Variables
+- Learned the difference between shell variables and exported environment variables.
+- Demonstrated child-shell inheritance using `export`.
