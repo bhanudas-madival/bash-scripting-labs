@@ -1115,3 +1115,42 @@ Example:
 ### Shell vs Environment Variables
 - Learned the difference between shell variables and exported environment variables.
 - Demonstrated child-shell inheritance using `export`.
+
+## Bash Scripting Review
+
+### Shell Basics
+- Shell globbing:
+  - `*`
+  - `?`
+  - `[abc]`
+- Compared:
+  - Single quotes
+  - Double quotes
+  - No quotes
+
+### Variables & Input
+- `read`
+- Positional parameters:
+  - `$0`
+  - `$1`
+  - `$2`
+  - `$@`
+  - `$#`
+- Argument validation using `$#`
+
+### Scripting Concepts
+- Command substitution:
+  - `date=$(date)`
+  - `backup_file="backup-$(date +%F).tar.gz"`
+- Functions
+- Menu-driven scripts
+- Continuous monitoring scripts
+- `bash -x` debugging
+
+### Practical Understanding
+- Why:
+  - `./calc.sh 5 "*" 5`
+  - works
+- Why:
+  - `./calc.sh 5 * 5`
+  - fails due to shell globbing
