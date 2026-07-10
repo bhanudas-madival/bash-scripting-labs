@@ -1154,3 +1154,20 @@ Example:
 - Why:
   - `./calc.sh 5 * 5`
   - fails due to shell globbing
+
+Bash Scripting Lab 1
+Topics Covered
+Variables & Variable Expansion
+User Input (read)
+Output (echo)
+Command Substitution ($( ))
+Exit Status ($?)
+Practicals
+Created and used variables.
+Built an interactive script to accept user input.
+Stored command output from hostname, whoami, and pwd into variables.
+Verified command success and failure using echo $? after mkdir.
+Key Learnings
+Writing basic interactive Bash scripts.
+Using command substitution for dynamic values.
+Understanding exit codes (0 = success, non-zero = failure).
