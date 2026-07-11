@@ -1171,3 +1171,16 @@ Key Learnings
 Writing basic interactive Bash scripts.
 Using command substitution for dynamic values.
 Understanding exit codes (0 = success, non-zero = failure).
+
+
+Bash Scripting Lab 2
+
+Practiced Bash conditional statements and operational decision-making.
+
+### Covered
+- `if` statements
+- File existence checks (`-f`, `-d`, `-x`, `-r`, `-w`, `-z`)
+- Service status checks using `systemctl`
+- Exit code handling (`$?`)
+- Disk usage monitoring with `df -h`
+- Built scripts for file validation, service checks, and disk usage alerts
