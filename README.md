@@ -1184,3 +1184,27 @@ Practiced Bash conditional statements and operational decision-making.
 - Exit code handling (`$?`)
 - Disk usage monitoring with `df -h`
 - Built scripts for file validation, service checks, and disk usage alerts
+
+Bash Scripting – LAB 3: Loops (Automation Foundation)
+
+Topics Covered
+
+for loops
+while loops
+Infinite loops
+Automation through repetition
+
+Practicals Completed
+
+Simulated user creation using a for loop.
+Automated connectivity checks for multiple servers using ping -c 2.
+Used if conditions with ping exit codes to identify reachable and unreachable hosts.
+Created a continuous monitoring script with while true.
+Used sleep 5 to control execution intervals and reduce CPU usage.
+
+Key Learnings
+
+Automate repetitive tasks using loops.
+Understand the difference between for and while loops.
+Build continuous monitoring and health-check scripts.
+Use sleep to prevent excessive CPU utilization in long-running scripts.
