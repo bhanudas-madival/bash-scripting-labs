@@ -1208,3 +1208,20 @@ Automate repetitive tasks using loops.
 Understand the difference between for and while loops.
 Build continuous monitoring and health-check scripts.
 Use sleep to prevent excessive CPU utilization in long-running scripts.
+
+## 13 July 2026 (Monday)
+
+### Bash Scripting – Lab 4: Functions
+
+**Topics Learned**
+- Bash functions
+- Reusable and modular scripting
+
+**Hands-on Practice**
+- Created a `check_disk()` function to display disk usage with `df -h`.
+- Called functions within a Bash script.
+- Built a multi-service checker using separate functions:
+  - `check_nginx()`
+  - `check_ssh()`
+  - `check_docker()`
+- Checked service status and printed appropriate messages.
