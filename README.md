@@ -1225,3 +1225,9 @@ Use sleep to prevent excessive CPU utilization in long-running scripts.
   - `check_ssh()`
   - `check_docker()`
 - Checked service status and printed appropriate messages.
+
+## 14 July 2026 (Tuesday)
+- Practiced Linux log analysis using `grep`
+- Detected and counted failed SSH login attempts
+- Extracted IP addresses from authentication logs using `awk` and `cut`
+- Improved troubleshooting and security log analysis skills
