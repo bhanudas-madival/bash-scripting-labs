@@ -1231,3 +1231,17 @@ Use sleep to prevent excessive CPU utilization in long-running scripts.
 - Detected and counted failed SSH login attempts
 - Extracted IP addresses from authentication logs using `awk` and `cut`
 - Improved troubleshooting and security log analysis skills
+
+Arguments & Positional Parameters
+
+**Topics Covered**
+- Positional parameters (`$1`, `$2`, `$@`, `$#`)
+- Argument validation
+- Backup script using `tar`
+- Calculator script using `case`
+- Command-line argument handling
+
+**Hands-on Practice**
+- Created a backup script that archives a specified directory.
+- Built a calculator script supporting basic arithmetic operations.
+- Practiced validating command-line arguments and displaying positional parameters.
