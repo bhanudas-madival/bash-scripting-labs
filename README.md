@@ -1245,3 +1245,22 @@ Arguments & Positional Parameters
 - Created a backup script that archives a specified directory.
 - Built a calculator script supporting basic arithmetic operations.
 - Practiced validating command-line arguments and displaying positional parameters.
+
+Operational Automation
+
+**Topics Practiced**
+- System health monitoring script
+- Hostname, uptime, memory, disk, and logged-in users
+- Detecting failed services using `systemctl --failed`
+- Automatic service recovery with `systemctl restart`
+- Log cleanup automation using `find` and `-mtime`
+
+**Commands Practiced**
+- `hostname`
+- `uptime`
+- `free -h`
+- `df -h`
+- `who`
+- `systemctl --failed`
+- `systemctl restart nginx`
+- `find /var/log -name "*.log" -mtime +7`
