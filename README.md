@@ -1264,3 +1264,22 @@ Operational Automation
 - `systemctl --failed`
 - `systemctl restart nginx`
 - `find /var/log -name "*.log" -mtime +7`
+
+Bash Scripting Lab 8: Error Handling & Debugging
+
+Topics Covered
+
+Shebang (#!/bin/bash)
+Debug mode (bash -x)
+Strict mode (set -e)
+Introduction to set -u
+Introduction to set -o pipefail
+Safe argument validation and usage messages
+
+Hands-on Practice
+
+Created an intentionally broken Bash script and debugged it using bash -x.
+Implemented command-line argument validation.
+Displayed a usage message when required arguments were missing.
+Exited the script safely on invalid input.
+Practiced writing more reliable and maintainable Bash scripts using debugging and error-handling techniques.
