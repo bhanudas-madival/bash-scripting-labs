@@ -1283,3 +1283,24 @@ Implemented command-line argument validation.
 Displayed a usage message when required arguments were missing.
 Exited the script safely on invalid input.
 Practiced writing more reliable and maintainable Bash scripts using debugging and error-handling techniques.
+
+Cron Automation
+
+**Topics Learned**
+- Cron jobs and scheduled automation
+- Cron schedule format (`* * * * *`)
+- Creating and editing cron jobs using `crontab -e`
+- Automating recurring tasks
+- Appending command output to log files using `>>`
+
+**Hands-on Practice**
+- Created a backup script scheduled to run every minute via cron
+- Configured a monitoring script to check disk usage every 5 minutes
+- Logged monitoring results by appending output to a log file
+- Practiced creating, modifying, and understanding cron schedules
+
+**Key Concepts**
+- Scheduled jobs
+- Recurring automation
+- Cron expressions
+- Output redirection (`>>`) for persistent logging
