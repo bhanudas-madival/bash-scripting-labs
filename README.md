@@ -1304,3 +1304,32 @@ Cron Automation
 - Recurring automation
 - Cron expressions
 - Output redirection (`>>`) for persistent logging
+Bash Scripting Fundamentals Revision
+- Revised core Bash concepts:
+  - Variables
+  - Conditions
+  - Loops
+  - Functions
+  - Script arguments
+  - Exit codes
+- Reviewed text processing utilities:
+  - grep
+  - awk (basics)
+  - cut
+  - sort
+  - uniq
+- Revised operational automation concepts:
+  - Service automation
+  - Backup automation
+  - Monitoring scripts
+  - Cron jobs
+- Reviewed debugging techniques:
+  - bash -x
+  - Exit codes
+  - Error handling
+- Revised Linux integration topics:
+  - System logs
+  - Processes
+  - Services
+  - Networking commands
+  - File permissions
